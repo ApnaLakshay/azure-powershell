@@ -43,6 +43,22 @@ Type                       : Microsoft.Maintenance/configurationAssignments
 
 Register maintenance configuration for dedicated host.
 
+### Example 2
+```powershell
+New-AzConfigurationAssignment -ConfigurationAssignmentName $maintenanceConfigurationName -MaintenanceConfigurationId $maintenanceConfigurationInGuestPatchCreated.Id -FilterLocation eastus2euap,centraluseuap -FilterOsType Windows,Linux -FilterTag '{"tagKey1" : ["tagKey1Value1", "tagKey1Value2"], "tagKey2" : ["tagKey2Value1", "tagKey2Value2", "tagKey2Value3"] }' -FilterOperator "Any"
+```
+
+```output
+Location                   : westus2
+MaintenanceConfigurationId : /subscriptions/42c974dd-2c03-4f1b-96ad-b07f050aaa74/resourcegroups/ps1/providers/Microsoft.Maintenance/maintenanceConfigurations/ps2
+ResourceId                 : 7b32ed22-dc7b-4a17-9c42-36c024f4c9f9
+Id                         :
+/subscriptions/42c974dd-2c03-4f1b-96ad-b07f050aaa74/resourcegroups/smdtestwestus2/providers/Microsoft.Compute/hostGroups/smddhgwestus2/hosts/smddhwestus2/providers/Microsoft.Maintenance/configurationAssignments/ps2
+Name                       : ps2
+Type                       : Microsoft.Maintenance/configurationAssignments
+```
+
+
 ## PARAMETERS
 
 ### -AsJob
